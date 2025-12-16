@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+int main() {
+    int choice, qty;
+    float price, total = 0, gst, grandTotal;
+    char more;
+
+    printf("\n=================================\n");
+    printf("          AA DINING\n");
+    printf("     SOUTH INDIAN RESTAURANT\n");
+    printf("=================================\n");
+
+    do {
+        printf("\n-------- MENU --------\n");
+        printf("1. Idli (2 pcs)           - Rs.30\n");
+        printf("2. Vada (2 pcs)           - Rs.40\n");
+        printf("3. Plain Dosa             - Rs.50\n");
+        printf("4. Masala Dosa            - Rs.70\n");
+        printf("5. Set Dosa               - Rs.60\n");
+        printf("6. Rava Dosa              - Rs.65\n");
+        printf("7. Onion Dosa             - Rs.60\n");
+        printf("8. Uttapam                - Rs.55\n");
+        printf("9. Pongal                 - Rs.45\n");
+        printf("10. Upma                  - Rs.40\n");
+        printf("11. Poori (2 pcs)         - Rs.50\n");
+        printf("12. Lemon Rice            - Rs.45\n");
+        printf("13. Curd Rice             - Rs.40\n");
+        printf("14. Sambar Rice           - Rs.50\n");
+        printf("15. Filter Coffee         - Rs.20\n");
+
+        printf("\nEnter your choice (1-15): ");
+        scanf("%d", &choice);
+
+        printf("Enter quantity: ");
+        scanf("%d", &qty);
+
+        switch (choice) {
+            case 1: price = 30; break;
+            case 2: price = 40; break;
+            case 3: price = 50; break;
+            case 4: price = 70; break;
+            case 5: price = 60; break;
+            case 6: price = 65; break;
+            case 7: price = 60; break;
+            case 8: price = 55; break;
+            case 9: price = 45; break;
+            case 10: price = 40; break;
+            case 11: price = 50; break;
+            case 12: price = 45; break;
+            case 13: price = 40; break;
+            case 14: price = 50; break;
+            case 15: price = 20; break;
+            default:
+                printf("Invalid choice!\n");
+                price = 0;
+        }
+
+        total += price * qty;
+
+        printf("\nDo you want to order more items? (y/n): ");
+        scanf(" %c", &more);
+
+    } while (more == 'y' || more == 'Y');
+
+    gst = total * 0.18;
+    grandTotal = total + gst;
+
+    printf("\n=================================\n");
+    printf("            BILL\n");
+    printf("=================================\n");
+    printf("Subtotal        : Rs. %.2f\n", total);
+    printf("GST (18%%)       : Rs. %.2f\n", gst);
+    printf("---------------------------------\n");
+    printf("Total Amount    : Rs. %.2f\n", grandTotal);
+    printf("=================================\n");
+    printf("      THANK YOU FOR DINING!\n");
+    printf("           AA DINING\n");
+    printf("=================================\n");
+
+    return 0;
+}
